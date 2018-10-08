@@ -9,7 +9,7 @@ function logStuff(logStatement) {
 
 
 /*
-    This can be used in place of redux or any situation where you need 2 or more components to pass data to eachother. This approach is simple, yet adequate for most needs and is much more straight forward than full on redux. The class should essentially be static, which means you never instantiate it (ex of what not to do: new EventEmitter())
+    This can be used for any situation where you need 2 or more components to pass data to eachother. This approach is simple, yet adequate for most needs and is very straight forward. The class should essentially be static, which means you never instantiate it (ex of what not to do: new EventEmitter())
     The proper way to use this component is to use the .on method to set up a listener for a certain custom event.
     When you want to fire an event you will use EventEmitter.emit('name-of-event'), and any corresponding listeners will fire
     Make sure you dispose of the listener when you dispose of a component that was using it or you will have memory leaks
@@ -166,5 +166,4 @@ export class EventEmitter {
         logStuff(`removing all listeners`);
         EventEmitter._listeners = {};
     }
-
 }
